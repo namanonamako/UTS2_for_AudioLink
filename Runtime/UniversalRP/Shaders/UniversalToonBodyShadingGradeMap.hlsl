@@ -33,7 +33,11 @@
                 // todo.  it has to be cared more.
                 UNITY_SETUP_INSTANCE_ID(input);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
-                input.vertexSH = i.vertexSH;
+# ifdef LIGHTMAP_ON
+
+# else
+				input.vertexSH = i.vertexSH;
+# endif
                 input.uv = i.uv0;
                 input.fogFactorAndVertexLight = i.fogFactorAndVertexLight;
 #  ifdef REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR
@@ -46,7 +50,7 @@
 #  ifdef _NORMALMAP
                 input.normalWS = half4(i.normalDir, viewDirection.x);      // xyz: normal, w: viewDir.x
                 input.tangentWS = half4(i.tangentDir, viewDirection.y);        // xyz: tangent, w: viewDir.y
-#  if (SHADER_LIBRARY_VERSION_MAJOR <10 )
+#  if (VERSION_LOWER(7, 5))
                 input.bitangentWS = half4(i.bitangentDir, viewDirection.z);    // xyz: bitangent, w: viewDir.z
 #  endif
 #  else
