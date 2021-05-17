@@ -3,7 +3,7 @@
  AudioLinkシステムが導入されたワールドであれば、音楽に合わせてアバターのエミッションが動作するようになります。  
  
 # デモ
- ![Demo](https://raw.github.com/wiki/namanonamako/UTS2_for_AudioLink/images/Demo.gif)
+ ![Demo](https://raw.github.com/wiki/namanonamako/UTS2_for_AudioLink/wiki/images/Demo.gif)
 
 # 要件
  アバターに利用する際は本unitypackageのみで利用可能です。  
