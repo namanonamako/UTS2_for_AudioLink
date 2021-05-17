@@ -1,5 +1,5 @@
 # UTS2_for_AudioLink
- llealloo氏のVRChatギミックである[vrc-udon-audio-link](https://github.com/llealloo/vrc-udon-audio-link/commits?author=llealloo)に対応したUTS2シェーダーです。  
+ llealloo氏のVRChatギミックである[vrc-udon-audio-link](https://github.com/llealloo/vrc-udon-audio-link/)に対応したUTS2シェーダーです。  
  AudioLinkシステムが導入されたワールドであれば、音楽に合わせてアバターのエミッションが動作するようになります。  
  
 # デモ
