@@ -10,14 +10,14 @@
  
  unity上で動作確認をする場合は
 * VRCSDK3-AVATAR- 
-* vrc-udon-audio-link
+* vrc-udon-audio-link  
 　が必要です。
  
  VRChat内で動作させるにはvrc-udon-audio-linkが導入されているワールドにいる必要があります。  
  デモワールドは上記AudioLinkのリポジトリにリンクがあります。  
  
 # インストール
-* アバターへの導入
+* アバターへの導入  
  本Unitypackageをプロジェクトにインポートしてください。  
  
 * アバターの動作確認  
