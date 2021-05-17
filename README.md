@@ -8,10 +8,9 @@
 # 要件
  アバターに利用する際は本unitypackageのみで利用可能です。  
  
- unity上で動作確認をする場合は
+ unity上で動作確認をする場合は以下が必要です。
 * VRCSDK3-AVATAR- 
 * vrc-udon-audio-link  
-　が必要です。
  
  VRChat内で動作させるにはvrc-udon-audio-linkが導入されているワールドにいる必要があります。  
  デモワールドは上記AudioLinkのリポジトリにリンクがあります。  
@@ -19,6 +18,8 @@
 # インストール
 * アバターへの導入  
  本Unitypackageをプロジェクトにインポートしてください。  
+ シェーダーは以下の階層にあります。  
+ UnityChanToonShader/Namako/*  
  
 * アバターの動作確認  
  VRCSDK・AudioLinkを導入後、AudioLink/AudioLinkAvatarをシーンに配置。  
