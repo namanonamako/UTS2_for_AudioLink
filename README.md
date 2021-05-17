@@ -33,4 +33,4 @@
 * twitter：[@Iiron_lung](https://twitter.com/Iiron_Lung)  
  
 # License
- UTS2に準拠します  
+ [UTS2](https://github.com/unity3d-jp/UnityChanToonShaderVer2_Project)に準拠します  
