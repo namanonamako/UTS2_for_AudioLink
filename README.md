@@ -25,6 +25,7 @@
 * アバターの動作確認  
  VRCSDK・AudioLinkを導入後、AudioLink/AudioLinkAvatarをシーンに配置。  
  AudioLinkAvatar/AudioLinkInputに任意の音楽ファイルを設定しシーンを再生してください。  
+ 音は聞こえないくらい小さくなります。  
 
 # Author
   
