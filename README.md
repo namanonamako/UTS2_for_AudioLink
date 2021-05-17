@@ -19,7 +19,7 @@
 * アバターへの導入  
  本Unitypackageをプロジェクトにインポートしてください。  
  シェーダーは以下の階層にあります。  
- UnityChanToonShader/Namako/*    
+ UnityChanToonShader/Namako/AudioLink/*    
  CustomUIには対応していないのでマテリアルの「Show All properties」を押してください。  
  
 * アバターの動作確認  
