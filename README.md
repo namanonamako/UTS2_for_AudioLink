@@ -7,9 +7,23 @@
 
 # 要件
  アバターに利用する際は本unitypackageのみで利用可能です。  
- 動作させるには[vrc-udon-audio-link](https://github.com/llealloo/vrc-udon-audio-link/commits?author=llealloo)が導入されているワールドに居る必要があります。  
+ 
+ unity上で動作確認をする場合は
+* VRCSDK3-AVATAR- 
+* vrc-udon-audio-link
+　が必要です。
+ 
+ VRChat内で動作させるにはvrc-udon-audio-linkが導入されているワールドにいる必要があります。  
  デモワールドは上記AudioLinkのリポジトリにリンクがあります。  
  
+# インストール
+* アバターへの導入
+ 本Unitypackageをプロジェクトにインポートしてください。  
+ 
+* アバターの動作確認  
+ VRCSDK・AudioLinkを導入後、AudioLink/AudioLinkAvatarをシーンに配置。  
+ AudioLinkAvatar/AudioLinkInputに任意の音楽ファイルを設定しシーンを再生してください。  
+
 # Author
   
 * 作成者：namanonamako  
