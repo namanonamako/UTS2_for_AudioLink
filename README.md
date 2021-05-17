@@ -19,7 +19,8 @@
 * アバターへの導入  
  本Unitypackageをプロジェクトにインポートしてください。  
  シェーダーは以下の階層にあります。  
- UnityChanToonShader/Namako/*  
+ UnityChanToonShader/Namako/*    
+ CustomUIには対応していないのでマテリアルの「Show All properties」を押してください。  
  
 * アバターの動作確認  
  VRCSDK・AudioLinkを導入後、AudioLink/AudioLinkAvatarをシーンに配置。  
