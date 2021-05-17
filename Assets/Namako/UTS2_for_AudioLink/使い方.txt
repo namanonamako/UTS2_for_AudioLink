@@ -1,0 +1,39 @@
+●基本
+通常のUTS2と同じようにマテリアルに割り当ててください。
+カスタムUIには対応していないので、AudioLinkを設定するときは「Show All properties」ボタンを押してください。
+
+●パラメーター
+・Use_AudioLink
+	AudioLink機能を使うかどうか
+・AudioBandMode
+	AudioLinkの帯域から1つを選ぶ(Single)・4つ同時に使う(Multi)を選びます。
+	Multiモードはマスクテクスチャの設定が少し難しいので基本的にSingleをお勧めします。
+・AudioBand
+	AudioBandModeがSingleの時にどの帯域を取るかを選びます。
+	Multiの場合は関係ありません。
+・AudioEmissive_Mask
+	AudioLinkから取った音で光らせる場所を設定します。
+	SingleモードはRチャンネル(赤色)が濃いほど光りやすいです。
+	MultiモードはRGBAに塗った場所がそれぞれLow～Highに対応します。
+
+	エミッションマスクに対してさらにマスクをかけます。
+	エミッションマスクで光らないところはAudioEmissive_Maskで光る設定にしても光りません。
+・AudioMixMode
+	光り方を選びます。
+	Fade:音が大きい程全体がつよく光ります。
+	Cut:音が大きいほど光る範囲が広がります。光る強さは一定です。
+・EmissionPower
+	音がなった時に光る強さです。
+・EmissionBasePower
+	音が鳴っていない時に光る強さです。
+
+●とりあえず使いたい場合の設定
+Emissive_Tex、Emissive_Colorを通常と同じく設定。
+Use_AudioLinkにチェック
+AudioBandModeを"Single"に
+AudioBandを好きな帯域に
+AudioEmissive_Maskは無し
+AudioMixModeを"Fade"に
+EmissionPowerを1に
+EmissionBasePowerを0に
+これで音に合わせてエミッションテクスチャが光ります。

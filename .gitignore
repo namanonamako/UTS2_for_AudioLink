@@ -80,3 +80,7 @@ Assets/Merlin.meta
 Assets/Merlin/Editor.meta
 Assets/Merlin/Editor/EasyEventEditor.cs
 Assets/Merlin/Editor/EasyEventEditor.cs.meta
+
+# AudioLink
+/Assets/AudioLink
+/Assets/AudioLink.meta
