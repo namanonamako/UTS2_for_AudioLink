@@ -2,6 +2,10 @@
  llealloo氏のVRChatギミックである[vrc-udon-audio-link](https://github.com/llealloo/vrc-udon-audio-link/)に対応したUTS2シェーダーです。  
  AudioLinkシステムが導入されたワールドであれば、音楽に合わせてアバターのエミッションが動作するようになります。  
  
+  **注意** 
+  AudioLinkはバージョン2にのみ対応しています。  
+  バージョン1が設置されたワールドでは動作しません。  
+ 
 # デモ
  <img src="https://raw.githubusercontent.com/wiki/namanonamako/UTS2_for_AudioLink/images/Demo.gif" width=50%>  
 アバターの服にワールド音源に反応するインジケーターを表示しています。  
