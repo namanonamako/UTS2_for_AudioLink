@@ -22,7 +22,7 @@
  
 # インストール
 * アバターへの導入  
- 本Unitypackageをプロジェクトにインポートしてください。  
+ [release](https://github.com/namanonamako/UTS2_for_AudioLink/releases)から最新版のUnitypackageを入手し、プロジェクトにインポートしてください。  
  シェーダーは以下の階層にあります。  
  UnityChanToonShader/Namako/AudioLink/*    
  
