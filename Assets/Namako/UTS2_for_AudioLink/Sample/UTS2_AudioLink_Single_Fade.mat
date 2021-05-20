@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: UTS2_AudioLink_Single_Fade
-  m_Shader: {fileID: 4800000, guid: 9baf30ce95c751649b14d96da3a4b4d5, type: 3}
+  m_Shader: {fileID: 4800000, guid: 51cbe51911dc27245887f58c5cc49012, type: 3}
   m_ShaderKeywords: _ _AUDIOBAND_LOW _AUDIOMIX_CUT _EMISSIVE_SIMPLE _IS_SINGLEBAND_SINGLE
     _OUTLINE_NML _USE_AUDIOLINK_ON
   m_LightmapFlags: 4
@@ -140,7 +140,7 @@ Material:
     - _AudioBand: 0
     - _AudioEmiBasePower: 0
     - _AudioEmiPower: 1
-    - _AudioMix: 0
+    - _AudioMix: 1
     - _BaseColor_Step: 0.5
     - _BaseShade_Feather: 0.0001
     - _Base_Speed: 0
@@ -185,7 +185,7 @@ Material:
     - _Is_Ortho: 0
     - _Is_OutlineTex: 0
     - _Is_PingPong_Base: 0
-    - _Is_SingleBand: 0
+    - _Is_SingleBand: 1
     - _Is_SpecularToHighColor: 0
     - _Is_UseTweakHighColorOnShadow: 0
     - _Is_UseTweakMatCapOnShadow: 0
@@ -233,7 +233,7 @@ Material:
     - _Use_BaseAs1st: 0
     - _Use_MultiBand: 0
     - _ZWrite: 1
-    - _simpleUI: 2
+    - _simpleUI: 0
     - _utsTechnique: 0
     - _utsVersion: 2.075
     m_Colors:

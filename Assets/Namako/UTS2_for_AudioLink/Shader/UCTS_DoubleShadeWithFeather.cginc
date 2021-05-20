@@ -405,12 +405,12 @@
 				// AudioLink 
 				float localIf_AudioTextureExists3 = If_AudioTextureExists3();
 				//fixed4 _AudioMask = tex2D(_AudioLink_Tex, TRANSFORM_TEX(Set_UV0, _AudioLink_Tex));
-				fixed4 _AudioMask = SAMPLE_TEXTURE2D(_AudioLink_Tex, sampler_point_repeat, TRANSFORM_TEX(Set_UV0, _AudioLink_Tex));
+				fixed4 _AudioMask = SAMPLE_TEXTURE2D(_AudioLink_Tex, sampler_point_repeat, TRANSFORM_TEX(Set_UV0, _Emissive_Tex));
 				fixed4 SampleCol = 0;
-				SampleCol.r = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * 0 + 0.0078125));
-				SampleCol.g = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * 1 + 0.0078125));
-				SampleCol.b = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * 2 + 0.0078125));
-				SampleCol.a = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * 3 + 0.0078125));
+				SampleCol.r = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * 0 + 0.0078125)).r;
+				SampleCol.g = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * 1 + 0.0078125)).r;
+				SampleCol.b = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * 2 + 0.0078125)).r;
+				SampleCol.a = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * 3 + 0.0078125)).r;
 				SampleCol *= localIf_AudioTextureExists3;
 				fixed SampleCol_Single = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * _AudioBand + 0.0078125)) * localIf_AudioTextureExists3;
 				float Audio_Emi_Cut_Single = step(1.01 - _AudioMask.r, SampleCol_Single);
@@ -419,7 +419,7 @@
 				
 				float Audio_Emi_Fade_Single = _AudioMask.r * SampleCol_Single;
 				float Audio_Emi_Fade_Multi = _AudioMask.r * SampleCol.r + _AudioMask.g * SampleCol.g + _AudioMask.b * SampleCol.b + _AudioMask.a * SampleCol.a;
-				float Audio_Emi_Fade = lerp(Audio_Emi_Fade_Single, Audio_Emi_Fade_Multi, _Is_SingleBand);
+				float Audio_Emi_Fade = lerp(Audio_Emi_Fade_Multi, Audio_Emi_Fade_Single, _Is_SingleBand);
 				float Audio_Emi = saturate(lerp(Audio_Emi_Cut, Audio_Emi_Fade, _AudioMix)) * _AudioEmiPower + _AudioEmiBasePower;
 				emissive *= lerp(1, Audio_Emi, _Use_AudioLink);
 				// 

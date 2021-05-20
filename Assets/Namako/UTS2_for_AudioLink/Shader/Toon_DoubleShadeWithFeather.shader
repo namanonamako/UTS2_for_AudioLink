@@ -273,5 +273,5 @@ Shader "UnityChanToonShader/Namako/AudioLink/Toon_DoubleShadeWithFeather" {
 //ToonCoreEnd
     }
     FallBack "Legacy Shaders/VertexLit"
-    CustomEditor "UnityChan.UTS2GUI"
+    CustomEditor "UnityChan.UTS2AudioGUI"
 }

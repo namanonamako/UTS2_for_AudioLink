@@ -110,10 +110,10 @@ Shader "UnityChanToonShader/Namako/AudioLink/NoOutline/ToonColor_DoubleShadeWith
         [HDR]_Emissive_Color ("Emissive_Color", Color) = (0,0,0,1)
 		// AudioLink
 		[MaterialToggle] _Use_AudioLink("Use_AudioLink", Float) = 0
-		[KeywordEnum(Single, Multi)] _Is_SingleBand("AudioBandMode", Float) = 0
+		[KeywordEnum(Multi, Single)] _Is_SingleBand("AudioBandMode", Float) = 0
 		[KeywordEnum(Low, LowMid, HighMid, High)] _AudioBand("AudioBand(SingleBandModeOnly)", Float) = 0
 		_AudioLink_Tex("AudioEmissive_Mask(SingleBand:R MultiBand:RGBA)", 2D) = "white" {}
-		[KeywordEnum(Cut, Fade)] _AudioMix("AudioMixMode", Float) = 1
+		[KeywordEnum(Cut, Fade)] _AudioMix("AudioEmissionMode", Float) = 1
 		_AudioEmiPower("EmissionPower", Float) = 0
 		_AudioEmiBasePower("EmissionBasePower", Float) = 0
 		//
@@ -151,5 +151,5 @@ Shader "UnityChanToonShader/Namako/AudioLink/NoOutline/ToonColor_DoubleShadeWith
         UsePass "UnityChanToonShader/Namako/AudioLink/Toon_DoubleShadeWithFeather/SHADOWCASTER"
     }
     FallBack "Legacy Shaders/VertexLit"
-    CustomEditor "UnityChan.UTS2GUI"
+    CustomEditor "UnityChan.UTS2AudioGUI"
 }

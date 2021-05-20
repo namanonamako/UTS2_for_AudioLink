@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: UTS2_AudioLink_Multi
-  m_Shader: {fileID: 4800000, guid: 9baf30ce95c751649b14d96da3a4b4d5, type: 3}
+  m_Shader: {fileID: 4800000, guid: 51cbe51911dc27245887f58c5cc49012, type: 3}
   m_ShaderKeywords: _ _AUDIOBAND_LOWMID _AUDIOMIX_CUT _EMISSIVE_SIMPLE _IS_SINGLEBAND_MULTI
     _OUTLINE_NML _USE_AUDIOLINK_ON
   m_LightmapFlags: 4
@@ -138,8 +138,8 @@ Material:
     - _Ap_RimLight_FeatherOff: 0
     - _Ap_RimLight_Power: 0.1
     - _AudioBand: 1
-    - _AudioEmiBasePower: 0
-    - _AudioEmiPower: 1
+    - _AudioEmiBasePower: 0.07
+    - _AudioEmiPower: 0.88
     - _AudioMix: 0
     - _BaseColor_Step: 0.5
     - _BaseShade_Feather: 0.0001
@@ -233,7 +233,7 @@ Material:
     - _Use_BaseAs1st: 0
     - _Use_MultiBand: 0
     - _ZWrite: 1
-    - _simpleUI: 2
+    - _simpleUI: 0
     - _utsTechnique: 0
     - _utsVersion: 2.075
     m_Colors:
