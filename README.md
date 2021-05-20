@@ -2,7 +2,7 @@
  llealloo氏のVRChatギミックである[vrc-udon-audio-link](https://github.com/llealloo/vrc-udon-audio-link/)に対応したUTS2シェーダーです。  
  AudioLinkシステムが導入されたワールドであれば、音楽に合わせてアバターのエミッションが動作するようになります。  
  
-  ### **注意**   
+  **注意**   
   AudioLinkはバージョン2にのみ対応しています。  
   バージョン1が設置されたワールドでは動作しません。  
  
@@ -25,7 +25,6 @@
  本Unitypackageをプロジェクトにインポートしてください。  
  シェーダーは以下の階層にあります。  
  UnityChanToonShader/Namako/AudioLink/*    
- CustomUIには対応していないのでマテリアルの「Show All properties」を押してください。  
  
 * アバターの動作確認  
  VRCSDK・AudioLinkを導入後、AudioLink/AudioLinkAvatarをシーンに配置。  
