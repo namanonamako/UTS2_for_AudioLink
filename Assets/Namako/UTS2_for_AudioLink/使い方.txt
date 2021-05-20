@@ -1,39 +1,40 @@
 ●基本
+シェーダーは『UnityChanToonShader/Namako/AudioLink/*』にあります。
 通常のUTS2と同じようにマテリアルに割り当ててください。
-カスタムUIには対応していないので、AudioLinkを設定するときは「Show All properties」ボタンを押してください。
+EmissiveAnimationには対応していません。
 
 ●パラメーター
-・Use_AudioLink
-	AudioLink機能を使うかどうか
-・AudioBandMode
-	AudioLinkの帯域から1つを選ぶ(Single)・4つ同時に使う(Multi)を選びます。
-	Multiモードはマスクテクスチャの設定が少し難しいので基本的にSingleをお勧めします。
-・AudioBand
-	AudioBandModeがSingleの時にどの帯域を取るかを選びます。
-	Multiの場合は関係ありません。
-・AudioEmissive_Mask
-	AudioLinkから取った音で光らせる場所を設定します。
-	SingleモードはRチャンネル(赤色)が濃いほど光りやすいです。
-	MultiモードはRGBAに塗った場所がそれぞれLow～Highに対応します。
-
-	エミッションマスクに対してさらにマスクをかけます。
-	エミッションマスクで光らないところはAudioEmissive_Maskで光る設定にしても光りません。
-・AudioMixMode
-	光り方を選びます。
-	Fade:音が大きい程全体がつよく光ります。
-	Cut:音が大きいほど光る範囲が広がります。光る強さは一定です。
-・EmissionPower
-	音がなった時に光る強さです。
-・EmissionBasePower
+通常のUTS2のEmissiveの中にあります。
+・AudioLink Emissive
+	AudioLink機能を使うかどうかです。
+・AudioEmissionBasePower
 	音が鳴っていない時に光る強さです。
+・AudioEmissionPower
+	音が鳴った時に光る強さです。
+・AudioEmissionMode
+	光り方を選びます。
+	Fade:音が大きい程全体が強く光ります。
+	Cut:これを選んだ場合AudioEmissive_Maskにグラデーションのあるテクスチャを設定してください。
+	　　音が大きいほど、マスクテクスチャの色が薄いところまで光ります。光る強さは一定です。
+・AudioBand
+	どの帯域に反応するかを選びます。
+・AudioEmissive_Mask
+	AudioLinkに反応して光らせる場所を設定します。
+	エミッションマスクに対してさらにマスクをかけるため、エミッションマスクで光らないところはAudioEmissive_Maskで塗っても光りません。
+
+・AudioBandMode(Advanced)
+	AudioLinkの全4バンドに同時対応させるモードです。
+	シェーダー・テクスチャにある程度の知識が必要です。
+	AudioEmissive_MaskがRGBAでそれぞれR:Low G:LowMid B:HighMid A:Highに対応します。
+	それぞれに塗り分けたテクスチャを用意してください。
 
 ●とりあえず使いたい場合の設定
 Emissive_Tex、Emissive_Colorを通常と同じく設定。
-Use_AudioLinkにチェック
-AudioBandModeを"Single"に
+AudioLink EmissiveをActiveに
+AudioEmissionBasePowerを0に
+AudioEmissionPowerを1に
+AudioEmissionModeを"Fade"に
 AudioBandを好きな帯域に
 AudioEmissive_Maskは無し
-AudioMixModeを"Fade"に
-EmissionPowerを1に
-EmissionBasePowerを0に
+AudioBandModeを"Off"に
 これで音に合わせてエミッションテクスチャが光ります。
