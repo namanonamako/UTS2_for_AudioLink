@@ -415,7 +415,7 @@
 				fixed SampleCol_Single = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * _AudioBand + 0.0078125)) * localIf_AudioTextureExists3;
 				float Audio_Emi_Cut_Single = step(1.01 - _AudioMask.r, SampleCol_Single);
 				float Audio_Emi_Cut_Multi = (step(1.01 - _AudioMask.r, SampleCol.r) + step(1.01 - _AudioMask.g, SampleCol.g) + step(1.01 - _AudioMask.b, SampleCol.b) + step(1.01 - _AudioMask.a, SampleCol.a));
-				float Audio_Emi_Cut = lerp(Audio_Emi_Cut_Single, Audio_Emi_Cut_Multi, _Is_SingleBand);
+				float Audio_Emi_Cut = lerp(Audio_Emi_Cut_Multi, Audio_Emi_Cut_Single,  _Is_SingleBand);
 				
 				float Audio_Emi_Fade_Single = _AudioMask.r * SampleCol_Single;
 				float Audio_Emi_Fade_Multi = _AudioMask.r * SampleCol.r + _AudioMask.g * SampleCol.g + _AudioMask.b * SampleCol.b + _AudioMask.a * SampleCol.a;
