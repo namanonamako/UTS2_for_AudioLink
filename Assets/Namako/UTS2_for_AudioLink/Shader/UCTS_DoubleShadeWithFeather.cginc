@@ -89,7 +89,8 @@
             uniform float _BumpScale;
             uniform float _BumpScaleMatcap;
             //Emissive
-            uniform sampler2D _Emissive_Tex; uniform float4 _Emissive_Tex_ST;
+			UNITY_DECLARE_TEX2D_NOSAMPLER(_Emissive_Tex); uniform float4 _Emissive_Tex_ST;
+            //uniform sampler2D _Emissive_Tex; uniform float4 _Emissive_Tex_ST;
             uniform float4 _Emissive_Color;
 			// AudioLink
 			uniform float _Use_AudioLink;
@@ -366,7 +367,8 @@
                 float envLightIntensity = 0.299*envLightColor.r + 0.587*envLightColor.g + 0.114*envLightColor.b <1 ? (0.299*envLightColor.r + 0.587*envLightColor.g + 0.114*envLightColor.b) : 1;
 //v.2.0.7
 #ifdef _EMISSIVE_SIMPLE
-                float4 _Emissive_Tex_var = tex2D(_Emissive_Tex,TRANSFORM_TEX(Set_UV0, _Emissive_Tex));
+                float4 _Emissive_Tex_var = SAMPLE_TEXTURE2D(_Emissive_Tex, sampler_point_repeat, TRANSFORM_TEX(Set_UV0, _Emissive_Tex));
+                //float4 _Emissive_Tex_var = tex2D(_Emissive_Tex,TRANSFORM_TEX(Set_UV0, _Emissive_Tex));
                 float emissiveMask = _Emissive_Tex_var.a;
                 emissive = _Emissive_Tex_var.rgb * _Emissive_Color.rgb * emissiveMask;
 #elif _EMISSIVE_ANIMATION

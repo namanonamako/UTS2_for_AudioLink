@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: UTS2_AudioLink_Multi
-  m_Shader: {fileID: 4800000, guid: 51cbe51911dc27245887f58c5cc49012, type: 3}
-  m_ShaderKeywords: _ _AUDIOBAND_LOWMID _AUDIOMIX_CUT _EMISSIVE_SIMPLE _IS_SINGLEBAND_MULTI
+  m_Shader: {fileID: 4800000, guid: 46f9ae9b9f90f934cbf0575176198b55, type: 3}
+  m_ShaderKeywords: _ _AUDIOBAND_LOWMID _AUDIOMIX_CUT _EMISSIVE_SIMPLE _IS_SINGLEBAND_SINGLE
     _OUTLINE_NML _USE_AUDIOLINK_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -41,6 +41,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ClippingMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -148,6 +152,7 @@ Material:
     - _BumpScale: 1
     - _BumpScaleMatcap: 1
     - _CameraRolling_Stabilizer: 0
+    - _Clipping_Level: 0.039
     - _ColorShift_Speed: 0
     - _CullMode: 2
     - _Cutoff: 0.5
@@ -160,8 +165,10 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HighColor_Power: 0
+    - _Inverse_Clipping: 0
     - _Inverse_MatcapMask: 0
     - _Inverse_Z_Axis_BLD: 1
+    - _IsBaseMapAlphaAsClippingMask: 0
     - _Is_BLD: 0
     - _Is_BakedNormal: 0
     - _Is_BlendAddToHiColor: 0
@@ -226,6 +233,7 @@ Material:
     - _Tweak_MatcapMaskLevel: 0
     - _Tweak_RimLightMaskLevel: 0
     - _Tweak_SystemShadowsLevel: 0
+    - _Tweak_transparency: -0.183
     - _UVSec: 0
     - _Unlit_Intensity: 1
     - _Use_1stAs2nd: 0
