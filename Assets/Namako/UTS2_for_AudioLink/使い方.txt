@@ -1,7 +1,6 @@
 ●基本
 シェーダーは『UnityChanToonShader/Namako/AudioLink/*』にあります。
 通常のUTS2と同じようにマテリアルに割り当ててください。
-EmissiveAnimationには対応していません。
 
 ●パラメーター
 通常のUTS2のEmissiveの中にあります。
