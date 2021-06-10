@@ -371,6 +371,9 @@
                 //float4 _Emissive_Tex_var = tex2D(_Emissive_Tex,TRANSFORM_TEX(Set_UV0, _Emissive_Tex));
                 float emissiveMask = _Emissive_Tex_var.a;
                 emissive = _Emissive_Tex_var.rgb * _Emissive_Color.rgb * emissiveMask;
+				// Audiolink
+				fixed4 _AudioMask = SAMPLE_TEXTURE2D(_AudioLink_Tex, sampler_point_repeat, TRANSFORM_TEX(Set_UV0, _Emissive_Tex));
+				// AL
 #elif _EMISSIVE_ANIMATION
                 //v.2.0.7 Calculation View Coord UV for Scroll 
                 float3 viewNormal_Emissive = (mul(UNITY_MATRIX_V, float4(i.normalDir,0))).xyz;
@@ -393,21 +396,23 @@
                 float2 scrolledUV = emissive_uv - float2(_Scroll_EmissiveU, _Scroll_EmissiveV)*_Is_PingPong_Base_var;
                 float rotateVelocity = _Rotate_EmissiveUV*3.141592654;
                 float2 _rotate_EmissiveUV_var = RotateUV(scrolledUV, rotateVelocity, float2(0.5, 0.5), _Is_PingPong_Base_var);
-                float4 _Emissive_Tex_var = tex2D(_Emissive_Tex,TRANSFORM_TEX(Set_UV0, _Emissive_Tex));
+                float4 _Emissive_Tex_var = SAMPLE_TEXTURE2D(_Emissive_Tex, sampler_point_repeat, TRANSFORM_TEX(Set_UV0, _Emissive_Tex));
                 float emissiveMask = _Emissive_Tex_var.a;
-                _Emissive_Tex_var = tex2D(_Emissive_Tex,TRANSFORM_TEX(_rotate_EmissiveUV_var, _Emissive_Tex));
+                _Emissive_Tex_var = SAMPLE_TEXTURE2D(_Emissive_Tex, sampler_point_repeat, TRANSFORM_TEX(_rotate_EmissiveUV_var, _Emissive_Tex));
                 float _colorShift_Speed_var = 1.0 - cos(_time_var.g*_ColorShift_Speed);
                 float viewShift_var = smoothstep( 0.0, 1.0, max(0,dot(normalDirection,viewDirection)));
                 float4 colorShift_Color = lerp(_Emissive_Color, lerp(_Emissive_Color, _ColorShift, _colorShift_Speed_var), _Is_ColorShift);
                 float4 viewShift_Color = lerp(_ViewShift, colorShift_Color, viewShift_var);
                 float4 emissive_Color = lerp(colorShift_Color, viewShift_Color, _Is_ViewShift);
-                emissive = emissive_Color.rgb * _Emissive_Tex_var.rgb * emissiveMask;
+				emissive = emissive_Color.rgb * _Emissive_Tex_var.rgb * emissiveMask;
+				// Audiolink
+				fixed4 _AudioMask = SAMPLE_TEXTURE2D(_AudioLink_Tex, sampler_point_repeat, TRANSFORM_TEX(_rotate_EmissiveUV_var, _Emissive_Tex));
+				// AL
 #endif
 //
 				// AudioLink 
 				float localIf_AudioTextureExists3 = If_AudioTextureExists3();
 				//fixed4 _AudioMask = tex2D(_AudioLink_Tex, TRANSFORM_TEX(Set_UV0, _AudioLink_Tex));
-				fixed4 _AudioMask = SAMPLE_TEXTURE2D(_AudioLink_Tex, sampler_point_repeat, TRANSFORM_TEX(Set_UV0, _Emissive_Tex));
 				fixed4 SampleCol = 0;
 				SampleCol.r = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * 0 + 0.0078125)).r;
 				SampleCol.g = SAMPLE_TEXTURE2D(_AudioTexture, sampler_point_repeat, (0, 0.015625 * 1 + 0.0078125)).r;
